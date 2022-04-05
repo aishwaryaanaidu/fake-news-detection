@@ -51,10 +51,10 @@ export const FakeNews = () => {
                         </div>
                     </div>
                     {!!output && output == "1" &&
-                        <p>The input text is real</p>
+                        <p style={{ marginLeft: "34.5%", marginTop: "2%", fontSize: "16pt", color: "green"}}>The input text is real</p>
                     }
                     {!!output && output == "0" &&
-                        <p>The input text is fake</p>
+                        <p style={{ marginLeft: "34.5%", marginTop: "2%", fontSize: "16pt", color: "red"}}>The input text is fake</p>
                     }
                 </Col>
             </Row>
