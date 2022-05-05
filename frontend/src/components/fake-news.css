@@ -1,0 +1,22 @@
+.output-text {
+    margin-left: "34.5%";
+    margin-top: "2%";
+    font-size: "16pt";
+    color: "green";
+}
+
+.check-button {
+    width: "30%";
+    margin-left: "35%";
+    margin-top: "5%";
+    height: "20%";
+    background-color: "#B1B1B1";
+    border: "1px solid #CD5465";
+}
+
+.heading {
+    font-size: "20pt";
+    color: "#CD5465";
+    align-content: "center";
+    margin-left: "25%";
+}

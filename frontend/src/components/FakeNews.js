@@ -2,11 +2,12 @@ import React, { useState } from 'react';
 
 import 'antd/dist/antd.css';
 
-import { Input, Select, Row, Col, Button } from 'antd';
+import './fake-news.css';
+
+import { Input, Row, Col, Button } from 'antd';
 
 const { TextArea } = Input;
 
-// open -n -a /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --args --user-data-dir="/tmp/chrome_dev_test" --disable-web-security
 
 export const FakeNews = () => {
 
@@ -14,9 +15,8 @@ export const FakeNews = () => {
     const [output, setOutput] = useState("");
 
     const check = () => {
-        fetch('http://7994-34-125-236-23.ngrok.io', { 
+        fetch('http://e9aa-34-147-97-121.ngrok.io', { 
           method: 'POST',
-        //   mode: 'cors',
           headers: {
             'Content-Type':'application/json'
           },
@@ -31,7 +31,6 @@ export const FakeNews = () => {
         setInputText(event.target.value);
     }
 
-    console.log(output)
 
     return (
         <div>
@@ -44,7 +43,7 @@ export const FakeNews = () => {
                     <div style={{ marginTop: "15%" }}>
                         <p style={{ fontSize: "20pt", color: "#CD5465", alignContent: "center", marginLeft: "25%" }}>Fake News Detection</p>
                         <div style={{ marginTop: '10%' }}>
-                            <TextArea maxLength={100} style={{ height: 400, width: 550, border: '2px solid #CD5465' }} value={inputText} onChange={handleTextChange} />
+                            <TextArea placeholder="Please enter your text" maxLength={100000} style={{ height: 400, width: 550, border: '2px solid #CD5465' }} value={inputText} onChange={handleTextChange} />
                             <Button type="primary" shape="round" style={{ width: "30%", marginLeft: "35%", marginTop: "5%", height: "20%", backgroundColor: !!!inputText ? "#B1B1B1" : "#CD5465", border: !!!inputText ? "" : "1px solid #CD5465" }} onClick={check} disabled={!!!inputText}>
                                 Check
                             </Button>
@@ -61,3 +60,7 @@ export const FakeNews = () => {
         </div>
     )
 }
+
+
+
+// open -n -a /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --args --user-data-dir="/tmp/chrome_dev_test" --disable-web-security
